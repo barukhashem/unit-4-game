@@ -1,63 +1,41 @@
-// Create computer's numerical character pool:
-var randomNumber = Math.floor(Math.random() * 10) + 9;
+// This is a game with 4 crystals and a random result.
+// The random result shown at the start of the game should be between 19 - 120.
+// Each crystal should have a random unknown value between 1 - 12 (unknown until you click on it).
+// Clicking any crystal should add to the previous result until it equals the total score.
+// If it's greater than the random result, then the loss counter decrements and the game restarts.
+// If it's equal, then the win counter increments and the game restarts.
+// A new random number should generate every time you win or lose.
 
-function generateAlphabet() {
-    var arr = [];
-    for (var i = 19; i <= 120; i++) {
-        arr.push(String.fromCharCode(i));
-    }
-    return arr;
+// Global scope variables:
+var randomResult;
+var loss;
+var win;
+
+// Setters
+// Getters
+
+randomResult = Math.floor(Math.random() * 102) + 19;
+
+$("#result").html("Random Result: " + randomResult);
+
+for (var i = 0; i < 4; i++) {
+
+    var random = Math.floor(Math.random() * 11) + 1;
+    // console.log(random);
+
+    var crystal = $("<div>");
+    crystal.attr({
+        "class": "crystal",
+        "data-random": random
+    });
+
+    $(".crystals").append(crystal);
+
 }
-//GLOBAL SCOPE
-// Start the game with a score of 0.
-var playerScore = 0;
-var wins = 0;
-var losses = 0;
-var number = generateNumber();
-var $playerScore = document.getElementById("player-score");
-var $wins = document.getElementById("wins");
-var $losses = document.getElementById("losses");
-// var $guessesRemaining = document.getElementById("guesses-remaining");
-console.log($alreadyGuessed);
 
-// Randomly chooses an option from the random number array. This is the computer's generation of random number:
-var randomNumber = numberPool[Math.floor(Math.random() * numberPool.length)];
-var $computerPick = document.getElementById("computer-pick");
-console.log("computer's pick:", computerPick);
-var alreadyGuessedArr = [];
-
-//EVENT LISTENER:
-// When the player clicks on a crystal, it runs the following function:
 $(".crystal").on("click", function () {
-}
 
-document.onclick = function (event) {
-    guessesRemaining--;
-    var playerGuess = event.key.toLowerCase();
-    alreadyGuessedArr.push(playerGuess);
-    console.log("player win: " + playerWin);
+    console.log($(this).attr("data-random"));
 
-    // If the player matches the random number, increment the player's win variable.
-    if (playerGuess === computerPick) {
-        playerScore++;
-        // guessesRemaining = 10;
-        alreadyGuessedArr = [];
-        computerPick = numberPool[Math.floor(Math.random() * numberPool.length)];
-        console.log("computer's pick:", computerPick);
+});
 
-        // If the player exceeds the random number, increment the player's losses variable.
-    } else if (guessesRemaining === 0) {
-        computerScore++;
-        guessesRemaining = 10;
-        alreadyGuessedArr = [];
-        computerPick = pool[Math.floor(Math.random() * pool.length)];
-        console.log("computer's pick:", computerPick);
-    }
-
-    console.log("remaining guesses: " + guessesRemaining);
-
-    document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
-    document.getElementById("player-score").innerHTML = playerScore;
-    document.getElementById("computer-score").innerHTML = computerScore;
-    document.getElementById("already-guessed").innerHTML = alreadyGuessedArr.join(",   ");
-};
