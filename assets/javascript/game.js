@@ -7,10 +7,10 @@
 // A new random number should generate every time you win or lose.
 
 // Global scope variables:
-var randomResult;
+var randomNumber;
 var lost = 0;
 var win = 0;
-var previous = 0
+var score = 0
 
 // Setters
 // Getters
@@ -28,10 +28,10 @@ var resetAndRestartGame = function () {
     ];
 
     // Brings new element to DOM by generating a random number from 19 to 120:
-    randomResult = Math.floor(Math.random() * 102) + 19;
+    randomNumber = Math.floor(Math.random() * 102) + 19;
 
     // Displays the random number in the DOM:
-    $("#result").html("Random Result: " + randomResult);
+    $("#result").html("Match This Random Number: " + randomNumber);
 
     // A "for" loop generates 4 dinosaurs:
     for (var i = 0; i < 4; i++) {
@@ -55,7 +55,7 @@ var resetAndRestartGame = function () {
         $(".dinosaurs").append(dinosaur);
     }
 
-    $("#previous").html("Your Total Dino Score: " + previous);
+    $("#score").html("Your Dino-Score: " + score);
 
 }
 
@@ -69,41 +69,43 @@ $(document).on("click", ".dinosaur", function () {
     var number = parseInt($(this).attr("data-random"));
 
     // Adds numbers:
-    previous += number;
+    score += number;
 
-    $("#previous").html("Your Total Dino Score: " + previous);
+    $("#score").html("Your Dino-Score: " + score);
 
-    console.log(previous);
-
-    // If the numbers being added are greater than the randomly generated number, then you lose and the game restarts:
-    if (previous > randomResult) {
-
-        // Increments the lost tally:
-        lost++;
-
-        // This is put in the DOM:
-        $("#lost").html("You lost: " + lost);
-
-        previous = 0;
-
-        // Then reruns the entire function:
-        resetAndRestartGame();
-    }
+    console.log(score);
 
     // If the numbers being added equal the randomly generated number, then you win and the game restarts:
-    else if (previous === randomResult) {
+    if (score === randomNumber) {
 
         // Increments the win tally:
         win++;
 
         // This is put in the DOM:
-        $("#win").html("You win: " + win);
+        $("#win").html("Awesome! You won: " + win);
 
-        previous = 0;
+        score = 0;
 
         // Then reruns the entire function:
         resetAndRestartGame();
     }
+
+    // If the numbers being added are greater than the randomly generated number, then you lose and the game restarts:
+    else if (score > randomNumber) {
+
+        // Increments the lost tally:
+        lost++;
+
+        // This is put in the DOM:
+        $("#lost").html("Rrrawrr... You lost: " + lost);
+
+        score = 0;
+
+        // Then reruns the entire function:
+        resetAndRestartGame();
+    }
+
+
 
 });
 

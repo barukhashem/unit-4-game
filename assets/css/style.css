@@ -1,13 +1,58 @@
-body {
-    background: turquoise;
-  }  
-
-  h1 {
-    font-family: 'ZCOOL KuaiLe', cursive;
+html {
+    background: url("https://wallpapercave.com/wp/gQSluWK.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } 
+  
+  header {
+    font-family: 'Hanalei Fill', cursive;
     color: black;
     text-align: center;
-    font-size: 125px;
-    line-height: 100px;
+    font-size: 85px;
+  }
+
+  p {
+    font-family: 'Freckle Face', cursive;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+#result {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+}
+
+.rules {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    font-family: 'Freckle Face', cursive;
+}
+
+#score {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+    font-family: 'Freckle Face', cursive;
+}
+
+#win {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+    font-family: 'Freckle Face', cursive;
+}
+
+#lost {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+    font-family: 'Freckle Face', cursive;
 }
 
 .dinosaurs {

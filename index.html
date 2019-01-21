@@ -7,26 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>unit-4-game</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dokdo|Freckle+Face|Hanalei+Fill" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-    <br>
     <header id="header">
-        <h1>Dino Collector</h1>
+        <h1>Dino-Score!</h1>
     </header>
-    <h2>At the start of each game, a random number is shown.</h2>
 
-    <h2>There are four dinosaurs below. Clicking on a dinosaur adds a certain number of points to your score.</h2>
+    <br>
 
-    <h2>The value of each dinosaur is unknown until you click on it.</h2>
+    <div class="rules">
+        <p>For each game, four dinosaurs and a random number are shown below.</p>
 
-    <h2>You WIN if your score MATCHES the random number.</h2>
+        <p>Clicking a dinosaur adds a certain number of points to your Dino-Score.</p>
 
-    <h2>You LOSE if your score EXCEEDS the random number.</h2>
+        <p>However, the value of each dinosaur is unknown until you click it.</p>
 
-    <h2>For each new game, the value of each dinosaur randomnly changes.</h2>
+        <p>You WIN if your score EQUALS the random number.</p>
+
+        <p>You LOSE if your score EXCEEDS the random number.</p>
+
+        <p>For each new game, the value of each dinosaur randomnly changes.</p>
+    </div>
 
     <br>
 
@@ -39,8 +44,9 @@
     </div>
 
     <br>
+    <br>
 
-    <p id="previous"></p>
+    <p id="score"></p>
 
     <br>
 
