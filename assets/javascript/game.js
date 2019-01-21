@@ -31,7 +31,7 @@ var resetAndRestartGame = function () {
     randomNumber = Math.floor(Math.random() * 102) + 19;
 
     // Displays the random number in the DOM:
-    $("#result").html("Match This Random Number: " + randomNumber);
+    $("#result").html("Random Number: " + randomNumber);
 
     // A "for" loop generates 4 dinosaurs:
     for (var i = 0; i < 4; i++) {
@@ -97,7 +97,7 @@ $(document).on("click", ".dinosaur", function () {
         lost++;
 
         // This is put in the DOM:
-        $("#lost").html("Rrrawrr... You lost: " + lost);
+        $("#lost").html("Rrrawrr! You lost: " + lost);
 
         score = 0;
 
