@@ -1,11 +1,37 @@
-.crystals {
+body {
+    background: turquoise;
+  }  
+
+  h1 {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    color: black;
+    text-align: center;
+    font-size: 125px;
+    line-height: 100px;
+}
+
+.dinosaurs {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.crystal {
+.dinosaur {
     border: 1px solid green;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 1s; transform: 2s;
+}
+
+.dinosaur:hover {
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+    transform: translate(5px, 5px);
+    cursor: pointer;
+    transition: box-shadow 1s; transform: 2s;
+}
+
+img {
+    width: 50px;
 }
