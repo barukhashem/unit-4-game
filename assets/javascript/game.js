@@ -102,7 +102,7 @@ $(document).on("click", ".dinosaur", function () {
         lost++;
 
         // This is put in the DOM:
-        $("#lost").html("Grrrrrrr! You lost: " + lost);
+        $("#lost").html("Arrrrrrr! You lost: " + lost);
 
         // Gets link for losing "roar" audio:
         var audio = document.createElement("audio");
