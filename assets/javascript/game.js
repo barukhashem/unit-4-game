@@ -63,10 +63,6 @@ resetAndRestartGame();
 // Event delegation (when page loads, the clicked button finds the old element dinosaur class to work with)
 $(document).on("click", ".dinosaur", function () {
 
-        // Gets link for win/loss:
-        var audioElement = document.createElement("audio");
-        audioElement.setAttribute("src", "assets/win-roar.mp3");
-
     // Turns the following into a number:
     var number = parseInt($(this).attr("data-random"));
 
@@ -86,6 +82,13 @@ $(document).on("click", ".dinosaur", function () {
         // This is put in the DOM:
         $("#win").html("Rrrrawrr! You won: " + win);
 
+        // Gets link for winning "roar" audio:
+        var audio = document.createElement("audio");
+        audio.setAttribute("src", "assets/win-roar.mp3");
+
+        // plays file for winning "roar":
+        audio.play();
+
         score = 0;
 
         // Then reruns the entire function:
@@ -100,6 +103,13 @@ $(document).on("click", ".dinosaur", function () {
 
         // This is put in the DOM:
         $("#lost").html("Grrrrrrr! You lost: " + lost);
+
+        // Gets link for losing "roar" audio:
+        var audio = document.createElement("audio");
+        audio.setAttribute("src", "assets/lose-roar.mp3");
+
+        // plays file for losing "roar":
+        audio.play();
 
         score = 0;
 
