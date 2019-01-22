@@ -12,9 +12,6 @@ var lost = 0;
 var win = 0;
 var score = 0
 
-// Setters
-// Getters
-
 var resetAndRestartGame = function () {
 
     // Empties the dinosaurs (deletes old element):
@@ -62,8 +59,13 @@ var resetAndRestartGame = function () {
 // Page reloads and executes the function within it:
 resetAndRestartGame();
 
-// Event delegation (when page loads, the clicked button finds the old element crystal class to work with)
+// JavaScript function that wraps everything:
+// Event delegation (when page loads, the clicked button finds the old element dinosaur class to work with)
 $(document).on("click", ".dinosaur", function () {
+
+        // Gets link for win/loss:
+        var audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", "assets/win-roar.mp3");
 
     // Turns the following into a number:
     var number = parseInt($(this).attr("data-random"));
