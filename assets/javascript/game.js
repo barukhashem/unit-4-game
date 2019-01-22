@@ -84,7 +84,7 @@ $(document).on("click", ".dinosaur", function () {
         win++;
 
         // This is put in the DOM:
-        $("#win").html("Awesome! You won: " + win);
+        $("#win").html("Rrrrawrr! You won: " + win);
 
         score = 0;
 
@@ -99,7 +99,7 @@ $(document).on("click", ".dinosaur", function () {
         lost++;
 
         // This is put in the DOM:
-        $("#lost").html("Rrrawrr! You lost: " + lost);
+        $("#lost").html("Grrrrrrr! You lost: " + lost);
 
         score = 0;
 
