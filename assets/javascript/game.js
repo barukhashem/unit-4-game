@@ -4,6 +4,7 @@
 // Clicking any dinosaur should add to the previous result until it equals the total score.
 // If it's greater than the random result, then the loss counter increments and the game restarts.
 // If it's equal, then the win counter increments and the game restarts.
+// The score should reset when the player wins or loses.
 // A new random number should generate every time you win or lose.
 
 // Global scope variables:
@@ -71,8 +72,6 @@ $(document).on("click", ".dinosaur", function () {
 
     $("#score").html("Your Dino-Score: " + score);
 
-    console.log(score);
-
     // If the numbers being added equal the randomly generated number, then you win and the game restarts:
     if (score === randomNumber) {
 
@@ -86,7 +85,7 @@ $(document).on("click", ".dinosaur", function () {
         var audio = document.createElement("audio");
         audio.setAttribute("src", "assets/win-roar.mp3");
 
-        // plays file for winning "roar":
+        // Plays audio file for winning "roar":
         audio.play();
 
         score = 0;
@@ -108,7 +107,7 @@ $(document).on("click", ".dinosaur", function () {
         var audio = document.createElement("audio");
         audio.setAttribute("src", "assets/lose-roar.mp3");
 
-        // plays file for losing "roar":
+        // Plays audio file for losing "roar":
         audio.play();
 
         score = 0;
@@ -116,8 +115,5 @@ $(document).on("click", ".dinosaur", function () {
         // Then reruns the entire function:
         resetAndRestartGame();
     }
-
-
-
 });
 
